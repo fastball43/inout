@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  animal_name: MyString
+  origin_country: MyString
+
+two:
+  animal_name: MyString
+  origin_country: MyString

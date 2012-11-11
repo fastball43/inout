@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Animal name:</b>
+  <%= @animal.animal_name %>
+</p>
+
+<p>
+  <b>Origin country:</b>
+  <%= @animal.origin_country %>
+</p>
+
+
+<%= link_to '수정', edit_animal_path(@animal) %> |
+<%= link_to '뒤로', animals_path %>

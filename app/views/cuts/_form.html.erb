@@ -1,0 +1,34 @@
+<%= form_for(@cut) do |f| %>
+  <% if @cut.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cut.errors.count, "error") %> prohibited this cut from being saved:</h2>
+      <ul>
+      <% @cut.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="four mobile-one columns inline">
+      <%= f.label '가축코드' %>
+    </div>
+    <div class="eight mobile-three columns">
+      <%= f.text_field :animal_id %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four mobile-one columns inline right">
+      <%= f.label '부위' %>
+    </div>
+    <div class="eight mobile-three columns">
+      <%= f.text_field :cut_name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="eight mobile-three columns offset-by-four">
+      <%= f.submit '확인', class: 'button success ' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>가축 관리 페이지</h1>
+<table>
+  <thead>
+    <tr>
+      <th>가축#.</th>
+      <th>가축명</th>
+      <th>원산지</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+    <tr>
+      <td><%= animal.id %></td>
+      <td><%= animal.animal_name %></td>
+      <td><%= animal.origin_country %></td>
+      <td><%= link_to '조회', animal, class: 'tiny success button' %></td>
+      <td><%= link_to '수정', edit_animal_path(animal), class: 'tiny button' %></td>
+      <td><%= link_to '삭제', animal, method: :delete, data: { confirm: 'Are you sure?' }, class: 'tiny alert button' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to '추가', new_animal_path, class: 'radius button' %>

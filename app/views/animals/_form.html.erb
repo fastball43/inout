@@ -1,0 +1,33 @@
+<%= form_for(@animal) do |f| %>
+  <% if @animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+
+      <ul>
+      <% @animal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="two mobile-one columns">
+      <%= f.label '가축명', class: "right inline" %>
+    </div>
+    <div class="ten mobile-three columns">
+      <%= f.text_field :animal_name, class: 'two' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two mobile-one columns">
+      <%= f.label '원산지', class: "right inline" %>
+    </div>
+    <div class="ten mobile-three columns">
+      <%= f.text_field :origin_country, class: 'two' %>
+    </div>
+  </div>
+  <div class="btn">
+    <%= f.submit '완료', class: 'success button' %>
+  </div>
+<% end %>

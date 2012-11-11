@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="twelve mobile-four columns">
+    <div class="row">
+      <div class="nine mobile-four columns centered">
+        <div class="row">
+          <h1>부위 목록</h1>
+          <table class="nine mobile-four columns">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>동물</th>
+                <th>부위명</th>
+                <!-- <th></th> -->
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @cuts.each do |cut| %>
+                <tr>
+                  <td><%= cut.id %></td>
+                  <td><%= Animal.find(cut.animal_id).animal_name %></td>
+                  <td><%= cut.cut_name %></td>
+                  <!-- <td><%= link_to '보기', cut, class: 'tiny success button' %></td> -->
+                  <td><%= link_to '수정', edit_cut_path(cut), class: 'tiny button'  %></td>
+                  <td><%= link_to '삭제', cut, method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }, class: 'tiny alert button'  %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <%= link_to '부위 추가', new_cut_path, class: 'success button'  %>
+          <%= link_to '가축 조회 페이지로', animals_path, class: 'button'  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

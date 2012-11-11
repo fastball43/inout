@@ -1,0 +1,22 @@
+<div class="row">      
+  <div class="twelve mobile-four columns">
+    <h1><small>부위 수정 페이지</small></h1>
+    <div class="row">
+      <div class="four mobile-four columns panel callout radius">
+        <h5>가축코드 참고표</h5>
+        <ul class="block-grid three-up mobile-four-up">
+          <% @animals.each do |animal| %>
+            <li><%= animal.id %>: <%= animal.animal_name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="panel eight mobile-four columns">
+        <p>가축코드와 부위명을 수정해 주세요</p>
+        <%= render 'form' %>
+      </div>
+    </div>
+    <div class="row">
+      <%= link_to '취소하고 목록으로', cuts_path, class: 'alert button' %>
+    </div>
+  </div>
+</div>
