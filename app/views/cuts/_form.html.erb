@@ -15,7 +15,7 @@
       <%= f.label '가축코드' %>
     </div>
     <div class="eight mobile-three columns">
-      <%= f.text_field :animal_id %>
+      <%= f.select :animal_id, @animals.map { |row| [row.animal_name, row.id]} %>
     </div>
   </div>
   <div class="row">
